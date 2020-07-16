@@ -1,0 +1,22 @@
+<div *ngIf="authService.user as user; else login">
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline ml-auto">
+      <button
+        class="btn btn-outline-danger"
+        type="button"
+        (click)="logout()"
+      >
+        Logout
+      </button>
+    </form>
+  </nav>
+
+  <h1>Hi , {{ user.displayName }}</h1>
+</div>
+
+<ng-template #login>
+
+  <button class="btn btn-danger" (click)="googleLogin()">
+    Login with Google
+  </button>
+</ng-template>
